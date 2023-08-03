@@ -68,12 +68,12 @@ public class Main {
         int population = 12_000_000;
         int newborns = 17 * population / 1000;
         int deathRate = 8 * population / 1000;
-        int year = 0;
-        while (year <= 10) {
-            year++;
+        int currentYear = 2023;
+        while (currentYear <= 2033) {
+            currentYear++;
             population += newborns;
             population -= deathRate;
-            System.out.println("Год " + year + "  численность населения составляет " + population);
+            System.out.println("Год " + currentYear + "  численность населения составляет " + population);
         }
     }
 
@@ -86,7 +86,7 @@ public class Main {
         // в 12 миллионов рублей при условии, что процент банка от накоплений не меняется, а всегда равен 7%.
         //Выведите в консоль результат программы с указанием суммы накоплений по каждому месяцу.
 
-        int firstDeposit = 15_000;
+        double firstDeposit = 15_000;
         int month = 0;
         while (firstDeposit <= 12_000_000) {
             firstDeposit *= 1.07;
@@ -104,10 +104,14 @@ public class Main {
         //Видоизмените программу таким образом, чтобы в консоль выводились не все месяцы подряд,
         // а только каждый шестой. Должны быть видны накопления за 6, 12, 18, 24-й и следующие месяцы.
 
-        int number = 6;
-        while (number <= 24) {
-            System.out.print(number + "  ");
-            number = number + 6;
+        double firstDeposit = 15_000;
+        int month = 0;
+        while (firstDeposit <= 12_000_000) {
+            month++;
+            firstDeposit *= 1.07;
+            if (month % 6 == 0) {
+                System.out.println(month);
+            }
         }
     }
 
@@ -120,7 +124,7 @@ public class Main {
         //Напишите программу, которая будет выводить сумму накоплений за каждые полгода в течение 9 лет.
 
 
-        int firstDeposit = 15_000;
+        double firstDeposit = 15_000;
         int month = 0;
         while (month <= 9 * 12) {
             firstDeposit *= 1.07;
@@ -144,9 +148,7 @@ public class Main {
         //В нашем месяце 31 день. В результате у вас должно получиться от 4 до 5 сообщений с напоминаниями по разным датам.
 
         int firstFriday = 3;
-        while (firstFriday < 31) {
-            firstFriday = firstFriday;
-
+        while (firstFriday <= 31) {
             System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет");
             firstFriday = firstFriday + 7;
         }
