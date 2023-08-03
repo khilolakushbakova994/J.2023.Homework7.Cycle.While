@@ -135,7 +135,6 @@ public class Main {
 
     }
 
-
     public static void task7() {
         System.out.println(" Задание 7");
 
