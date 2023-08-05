@@ -71,9 +71,13 @@ public class Main {
         int currentYear = 2023;
         while (currentYear <= 2033) {
             currentYear++;
+            newborns = 17 * population / 1000;
+            deathRate = 8 * population / 1000;
             population += newborns;
             population -= deathRate;
+
             System.out.println("Год " + currentYear + "  численность населения составляет " + population);
+
         }
     }
 
@@ -128,9 +132,13 @@ public class Main {
         int month = 0;
         while (month <= 9 * 12) {
             firstDeposit *= 1.07;
-            firstDeposit *= 6;
-            month = month + 6;
-            System.out.println(" За  " + month + " месяцев, сумма накопления  " + firstDeposit);
+            month++;
+            if (month % 6 == 0) {
+
+                System.out.println(" За  " + month + " месяцев, сумма накопления  " + firstDeposit);
+
+            }
+
         }
 
     }
